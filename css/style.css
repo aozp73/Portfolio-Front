@@ -1,3 +1,4 @@
+/* header */
 .navbar-custom {
     transition: padding-top 0.5s, padding-bottom 0.5s; 
     padding-top: 1.5rem;   
@@ -11,6 +12,8 @@
     padding-top: 0.7rem;
     padding-bottom: 0.7rem; 
 }
+
+/* mainpage */
 .responsive-image {
     width: 500px;
     height: 310px;
@@ -22,4 +25,54 @@
     right: 10px;
     z-index: 1000;
 }
+
+
+/* resume (button) */
+.delete-btn {
+    display: none;
+    cursor: pointer;
+    opacity: 0.3;  /* 투명도 30% */
+}
+
+.add-btn {
+    cursor: pointer;
+    opacity: 0.3;  /* 투명도 30% */
+}
+
+.delete-btn:hover {
+    opacity: 1;  /* 마우스 호버시 투명도를 원래대로 복원 */
+}
+
+.add-btn:hover {
+    opacity: 1;  /* 마우스 호버시 투명도 원래대로 복원 */
+}
+
+/* resume (table) */
+.highlighted-row {
+    outline: 1px solid #b0b0b0; 
+    outline-offset: -1px;
+    box-shadow: 0px 0px 15px 5px rgba(128,128,128,0.3); 
+}
+
+.sortableTable td {
+    text-align: center;
+}
+
+.no-border,
+.no-border th {
+    border: none !important;
+}
+
+.sortableTable td,
+.sortableTable th {
+    border: 1px solid #cccccc;
+    padding: 10px;
+}
+.table-secondary :not(.non-secondary) {
+    background-color: #E2E3E5;
+}
+
+
+
+
 

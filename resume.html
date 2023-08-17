@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body {
+            padding-top: 88px;
+        }
+        
+    </style>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>    
+    
+    <header class="navbar navbar-custom navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/mainpage.html">포트폴리오</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto"> 
+                    <li class="nav-item me-4">
+                        <a class="nav-link" href="/resume.html">Resume</a>
+                    </li>
+                    <li class="nav-item me-4">
+                        <a class="nav-link" href="#">Project</a>
+                    </li>
+                    <li class="nav-item me-4">
+                        <a class="nav-link" href="#">Skills</a>
+                    </li>
+                    <li class="nav-item me-5">
+                        <a class="nav-link" href="#">TechBlog</a>
+                    </li>
+                </ul>
+                <button type="button" class="btn btn-primary mb-2 ms-2 edit-button" onclick="toggleEditMode()">편집모드</button>
+
+            </div>
+        </div>
+    </header>        
+
+    <div class="py-5" style="background-color: #F9F9F9" id="main-container">
+
+        <div class="ps-5 pe-1 container">
+            <table class="sortableTable" style="width: 80%; margin-left: auto; margin-right: auto;">
+                <tbody id="edu-table">
+
+                    <tr class="no-border">
+                        <th style="width: 25%"><h4>교육사항</h4></th>
+                    </tr>
+
+                    <tr class="table-secondary">
+                        <td style="width: 25%">재학기간</td>
+                        <td style="width: 13%">졸업여부</td>
+                        <td style="width: 27%">학교명</td>
+                        <td style="width: 17%">전공</td>
+                        <td style="width: 13%">학점</td>
+                        <td class="no-border non-secondary" style="width: 4.2%"></td>
+                    </tr>
+                    <tr id="edu-1">
+                        <td class="drag-handle">2015.03.21 ~ 2021.03.01</td>
+                        <td>학사졸업</td>
+                        <td>자바대학교</td>
+                        <td>기계공학과</td>
+                        <td>3.74</td>
+                        <td class="no-border"><span class="delete-btn">&#10006;</span></td>
+                    </tr>
+                    <tr id="edu-2"> 
+                        <td class="drag-handle ">2012.03.21 ~ 2015.03.01</td>
+                        <td>졸업</td>
+                        <td>AWS 고등학교</td>
+                        <td>이과</td>
+                        <td>-</td>
+                        <td class="no-border"><span class="delete-btn">&#10006;</span></td>
+                    </tr>
+                    <tr class="add-row toggleMode" style="display: none;">
+                        <td class="no-border add-cell" colspan="5" style="text-align: right;"></td>
+                        <td class="no-border"><span class="add-btn">➕</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br>
+
+        <div class="ps-5 pe-1 container">
+            <table class="sortableTable" style="width: 80%; margin-left: auto; margin-right: auto;">
+                <tbody id="etcedu-table">
+
+                    <tr class="table-secondary">
+                        <td style="width: 25%">수강기간</td>
+                        <td style="width: 13%">수료여부</td>
+                        <td style="width: 27%">교육 장소</td>
+                        <td style="width: 17%">과정명</td>
+                        <td style="width: 13%">기타</td>
+                        <td class="no-border non-secondary" style="width: 4.2%"></td>
+                    </tr>
+                    <tr id="etcedu-2"> 
+                        <td class="drag-handle ">2022.11.13 ~ 2023.05.03</td>
+                        <td>수료</td>
+                        <td>도커 아카데미</td>
+                        <td>풀스택 과정</td>
+                        <td>-</td>
+                        <td class="no-border"><span class="delete-btn">&#10006;</span></td>
+                    </tr>
+                    <tr class="add-row toggleMode" style="display: none;">
+                        <td class="no-border add-cell" colspan="5" style="text-align: right;"></td>
+                        <td class="no-border"><span class="add-btn">➕</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br><br><br>
+
+        <div class="ps-5 pe-1 container">
+            <table class="sortableTable" style="width: 80%; margin-left: auto; margin-right: auto;">
+                <tbody id="edu-table">
+
+                    <tr class="no-border">
+                        <th style="width: 25%"><h4>자격증 / 어학</h4></th>
+                    </tr>
+
+                    <tr class="table-secondary">
+                        <td style="width: 25%">취득일</td>
+                        <td style="width: 13%">종류</td>
+                        <td style="width: 27%">자격증명</td>
+                        <td style="width: 17%">발급기관</td>
+                        <td style="width: 13%">합격여부</td>
+                        <td class="no-border non-secondary" style="width: 4.2%"></td>
+                    </tr>
+                    <tr id="edu-1">
+                        <td class="drag-handle">2022.07.10</td>
+                        <td>어학</td>
+                        <td>TOEIC (830)</td>
+                        <td>한국TOEIC위원회</td>
+                        <td>최종합격</td>
+                        <td class="no-border"><span class="delete-btn">&#10006;</span></td>
+                    </tr>
+                    <tr id="edu-2">
+                        <td class="drag-handle">2022.06.19</td>
+                        <td>어학</td>
+                        <td>TOEIC Speaking (140)</td>
+                        <td>한국TOEIC위원회</td>
+                        <td>최종합격</td>
+                        <td class="no-border"><span class="delete-btn">&#10006;</span></td>
+                    </tr>
+                    <tr id="edu-3">
+                        <td class="drag-handle">2023.04.01</td>
+                        <td>IT자격증</td>
+                        <td>SQLD</td>
+                        <td>데이터베이스진흥원</td>
+                        <td>최종합격</td>
+                        <td class="no-border"><span class="delete-btn">&#10006;</span></td>
+                    </tr>
+
+                    <tr class="add-row toggleMode" style="display: none;">
+                        <td class="no-border add-cell" colspan="5" style="text-align: right;"></td>
+                        <td class="no-border"><span class="add-btn">➕</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br><br><br>
+
+
+        <div class="ps-5 pe-1 container">
+            <table class="sortableTable" style="width: 80%; margin-left: auto; margin-right: auto;">
+                <tbody id="onlinelecture-table">
+
+                    <tr class="no-border">
+                        <th style="width: 25%"><h4>추가 학습</h4></th>
+                    </tr>
+
+                    <tr class="table-secondary">
+                        <td style="width: 25%">수강일</td>
+                        <td style="width: 13%">종류</td>
+                        <td style="width: 27%">강의명</td>
+                        <td style="width: 17%">수강장소</td>
+                        <td style="width: 13%">블로깅</td>
+                        <td class="no-border non-secondary" style="width: 4.2%"></td>
+                    </tr>
+                    <tr id="onlineLecture-1">
+                        <td class="drag-handle">2023.05.22</td>
+                        <td>CS</td>
+                        <td>CS 지식의 정석</td>
+                        <td>인프런</td>
+                        <td><a href="#" style="text-decoration: none">링크</a></td>
+                        <td class="no-border"><span class="delete-btn">&#10006;</span></td>
+                    </tr>
+                    <tr id="onlineLecture-2">
+                        <td class="drag-handle">2023.07.03</td>
+                        <td>DB</td>
+                        <td>처음하는 MongoDB</td>
+                        <td>인프런</td>
+                        <td><a href="#" style="text-decoration: none">링크</a></td>
+                        <td class="no-border"><span class="delete-btn">&#10006;</span></td>
+                    </tr>
+                    <tr id="onlineLecture-3">
+                        <td class="drag-handle">2023.07.29</td>
+                        <td>Tool</td>
+                        <td>지옥에서온 Git</td>
+                        <td>인프런</td>
+                        <td><a href="#" style="text-decoration: none">링크</a></td>
+                        <td class="no-border"><span class="delete-btn">&#10006;</span></td>
+                    </tr>
+                    <tr id="onlineLecture-4">
+                        <td class="drag-handle">2023.07.30</td>
+                        <td>Tool</td>
+                        <td>지옥에서온 관리자 Git</td>
+                        <td>인프런</td>
+                        <td><a href="#" style="text-decoration: none">링크</a></td>
+                        <td class="no-border"><span class="delete-btn">&#10006;</span></td>
+                    </tr>
+                    <tr id="onlineLecture-5">
+                        <td class="drag-handle">2023.07.31</td>
+                        <td>OS</td>
+                        <td>Linux</td>
+                        <td>인프런</td>
+                        <td><a href="#" style="text-decoration: none">링크</a></td>
+                        <td class="no-border"><span class="delete-btn">&#10006;</span></td>
+                    </tr>
+                    <tr id="onlineLecture-6">
+                        <td class="drag-handle">2023.08.02</td>
+                        <td>DevOps</td>
+                        <td>도커 입문 강의</td>
+                        <td>유튜브</td>
+                        <td><a href="#" style="text-decoration: none">링크</a></td>
+                        <td class="no-border"><span class="delete-btn">&#10006;</span></td>
+                    </tr>
+                    <tr id="onlineLecture-7">
+                        <td class="drag-handle">2023.08.02</td>
+                        <td>DevOps</td>
+                        <td>도커와 최신 서버 기술</td>
+                        <td>인프런</td>
+                        <td><a href="#" style="text-decoration: none">링크</a></td>
+                        <td class="no-border"><span class="delete-btn">&#10006;</span></td>
+                    </tr>
+                    <tr id="onlineLecture-8">
+                        <td class="drag-handle">2023.08.07</td>
+                        <td>DevOps</td>
+                        <td>대세는 쿠버네티스</td>
+                        <td>인프런</td>
+                        <td><a href="#" style="text-decoration: none">링크</a></td>
+                        <td class="no-border"><span class="delete-btn">&#10006;</span></td>
+                    </tr>
+
+                    <tr class="add-row toggleMode" style="display: none;">
+                        <td class="no-border add-cell" colspan="5" style="text-align: right;"></td>
+                        <td class="no-border"><span class="add-btn">➕</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br><br><br>
+    </div>
+
+    
+
+    <script>
+        let addCnt = 0
+        let isEditMode = false;
+        let sortables = [];
+
+        window.addEventListener('scroll', function() {
+            let navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) { 
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+
+        function toggleEditMode() {
+            isEditMode = !isEditMode;
+            let elements = document.querySelectorAll('.toggleMode');
+
+            for (let element of elements) {
+                if (!isEditMode) { 
+                    element.style.display = 'none';  
+                } else { 
+                    element.style.display = '';  
+                }
+            }
+            initEditMode();
+        }
+
+
+        function initEditMode() {
+            // 기존 Sortable 인스턴스들 파괴
+            for (let sortable of sortables) {
+                sortable.destroy();
+            }
+            sortables = [];
+        
+            if (isEditMode) {
+                document.querySelectorAll('.sortableTable tbody').forEach(function(tbody) {
+                    let sortable = new Sortable(tbody, {
+                        handle: '.drag-handle',  
+                        animation: 500,
+                        filter: '.no-drag', 
+                        
+                        onMove: function (evt, originalEvent) {
+                            var nextItem = evt.related; 
+                            if ($(nextItem).hasClass('no-border') || $(nextItem).hasClass('table-secondary') || $(nextItem).hasClass('add-row') || $(nextItem).hasClass('add-form')) {
+                                return false;  // 드래그 이동 취소
+                            }
+                        },
+                        
+                        // 드래그 이벤트가 끝난 후에 실행되는 코드
+                        onEnd: function(evt) {
+                            const tbody = evt.from;
+                            const tbodyID = tbody.getAttribute('id');
+                            const rows = tbody.querySelectorAll('tr:not(:nth-child(1)):not(:nth-child(2)):not(:last-child):not(.add-form)');
+                            
+                            let rowPKs = [];
+                            rows.forEach(row => {
+                                const rowID = row.getAttribute('id');
+                                rowPK = rowID.split('-')[1]
+                                if (rowID) {
+                                    rowPKs.push(rowPK);
+                                }
+                            });
+
+                            console.log(`Tbody ID: ${tbodyID}`);
+                            console.log('Row IDs:', rowPKs);
+
+                            // ☆★☆★ PK의 순서를 리스트에 담고, Ajax-UPDATE 통신
+                            // - 순서 필드를 만들어서, 해당 필드 update
+                            // - 화면에 뿌릴 때는 순서 필드로 정렬
+                            // - 화면에 reload할 필요 없음
+                        }
+                            });
+                
+                        sortables.push(sortable);
+                });
+            }
+        }
+
+
+        $(document).ready(function() {
+            $(".add-btn").on('click', function() {
+                addCnt += 1
+                if (addCnt >= 2) {
+                    return;
+                }
+
+                let tableBody = $(this).closest('tbody');
+                let newRow = `
+                    <tr class="add-form">
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="text" class="form-control"></td>
+                        <td class="no-border">
+                            
+                        </td>
+                    </tr>
+                `;
+                let newBtn = `
+                <button class="btn btn-outline-primary submit-btn" onclick="enroll(event)">등록</button>
+                <button class="btn btn-outline-danger submit-btn" onclick="add_cancle(event)">취소</button>
+                `                
+                $(newRow).insertBefore(tableBody.find('.add-row'));
+                $(newBtn).appendTo(tableBody.find('.add-cell'));
+            });
+
+            $(".sortableTable tbody").on('mouseenter', 'tr:not(.table-secondary, .no-border, .add-row, .add-form)', function() {
+                if (isEditMode){
+                    $(this).addClass('highlighted-row');
+                    $(this).find('.delete-btn').show();
+                }
+            }).on('mouseleave', 'tr:not(.table-secondary, .no-border, .add-row)', function() {
+                if (isEditMode){
+                    $(this).removeClass('highlighted-row');
+                    $(this).find('.delete-btn').hide();
+                }
+            });
+        
+            $(".sortableTable").on('click', 'tbody tr .delete-btn', function() {
+                let tr = $(this).closest('tr');
+                let trID = tr.attr('id');  // 예: "edu-1"
+            
+                if(trID) {
+                    let parts = trID.split('-');  // ["edu", "1"]
+                    let path = parts[0];          // "edu"
+                    let pkValue = parts[1];       // "1"
+                    
+                    // ☆★☆★ path, pkValue로 Ajax-DELETE 통신코드 추가
+            
+                    tr.remove();
+                }
+            });
+            
+        });
+
+        function add_cancle(event) {
+            let clickedButton = event.target;
+            let tableBody = $(clickedButton).closest('tbody');
+
+            // 마지막에 추가한 행(입력 양식) 제거
+            tableBody.find("tr").eq(-2).remove();
+
+            // add-cell 클래스를 가진 셀의 내용(등록/취소 버튼) 비우기
+            tableBody.find('.add-cell').empty();
+            addCnt = 0;
+        }
+
+        function enroll(event) {
+            let clickedButton = event.target;
+            let tableBody = $(clickedButton).closest('tbody');
+            let currentRow = $(clickedButton).closest('tr').prev();
+        
+            let values = [];
+            currentRow.find("input[type='text']").each(function() {
+                values.push($(this).val());
+            });
+        
+            let tableID = currentRow.closest('tbody').attr('id'); // 예: "edu-table"
+
+            console.log("Input values:", values);
+            console.log("Table ID:", tableID);
+        
+            // ☆★☆★ tableID파싱한 값과 입력 값들로 Ajax-POST 통신코드 추가
+ 
+            // 통신에서 받은 값으로 대체 
+            testPK1 = 3
+            testContent0 = values[0]
+            testContent1 = values[1]
+            testContent2 = values[2]
+            testContent3 = values[3]
+            testContent4 = values[4]
+            let enrollContent = `
+                <tr id="etcedu-${testPK1}"> 
+                    <td class="drag-handle ">${testContent0}</td>
+                    <td>${testContent1}</td>
+                    <td>${testContent2}</td>
+                    <td>${testContent3}</td>
+                    <td>${testContent4}</td>
+                    <td class="no-border"><span class="delete-btn">&#10006;</span></td>
+                </tr>
+            `            
+            currentRow.before(enrollContent); 
+            currentRow.remove();
+            tableBody.find('.add-cell').empty();
+            addCnt = 0;
+        }
+
+        $(document).ready(function() {
+            initEditMode();
+        });
+        
+    </script>
+
+    <hr class="bg-secondary mb-5 mt-0">
+
+</body>
+
+</html>
