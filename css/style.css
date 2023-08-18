@@ -72,7 +72,29 @@
     background-color: #E2E3E5;
 }
 
+/* project page */
+.card-hover-effect {
+    transition: all 0.2s ease;
+    border-radius: 15px;
+}
 
+.card-hover-effect:hover {
+    cursor: pointer;
+    transform: translateY(-10px);
+    border: 1px solid rgb(155, 155, 155); 
+}
 
+.card-inner {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
 
+.border-bottom-gray {
+    border-bottom: 1px solid #dee2e6; 
+}
 
+.btn-fixed {
+    position: fixed; 
+    top: 140px;      
+    right: 10px;   
+}
