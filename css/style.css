@@ -93,8 +93,53 @@
     border-bottom: 1px solid #dee2e6; 
 }
 
-.btn-fixed {
+.project-btn-fixed {
     position: fixed; 
     top: 140px;      
     right: 10px;   
 }
+
+/* skills page */
+
+.container-custom-width {
+    max-width: 57%;
+} 
+
+.skills-btn-fixed {
+    position: fixed; 
+    top: 140px;      
+    right: 10px;   
+}
+
+.no-hover-container {
+    display: inline-block;
+}
+
+.no-hover-container:hover .no-hover {
+    background-color: transparent !important;
+    border-color: rgb(0, 0, 0) !important; 
+    color: inherit !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.no-hover {
+    background-color: transparent !important;
+    border-color: rgba(146, 146, 146, 0.699) !important; 
+    color: inherit !important;
+    box-shadow: none !important;
+    pointer-events: none;
+}
+
+.no-hover:hover {
+    background-color: transparent !important;
+    border-color: rgb(0, 0, 0) !important; 
+    color: inherit !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.close-icon {
+    font-size: 1rem;  
+    pointer-events: auto; 
+}
+
+
