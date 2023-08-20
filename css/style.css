@@ -143,3 +143,36 @@
 }
 
 
+/* TechBlog page */
+.blog-image-preview {
+    border: 1px solid #CED4DA; 
+    border-radius: 7px;  
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.blog-image-preview-change   {
+    border: 1px solid #CED4DA; 
+    border-radius: 7px;  
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.plus-icon {
+    font-size: 2rem;
+    color: #CED4DA;
+}
+
+.blog-image-preview:hover {
+    border: 2px solid #96969668;
+}
+
+.blog-image-preview:hover .plus-icon {
+    font-size: 2rem;
+    color: #5a5a5a68;
+}
