@@ -316,6 +316,21 @@
             }
         }
         
+        function checkImage(container_number) {
+            const fileInput = document.getElementById('fileInput-'+container_number);
+            const imageToChange = document.getElementById('imageToChange-'+container_number);
+            const file = fileInput.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+                // 이벤트 큐에 등록. CallBack 함수 작성
+                reader.onload = function(e) {
+                    imageToChange.src = e.target.result;
+                }
+                // 다 읽고 난 뒤, 위 CallBack 함수 작동
+                reader.readAsDataURL(file);
+            }
+        }
 
         function updateImage(container_number){
             postPK = `${container_number}`
